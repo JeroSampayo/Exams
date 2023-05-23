@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/23 14:00:24 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/05/23 17:16:58 by jmiras-s         ###   ########.fr       */
+/*   Created: 2023/05/23 17:51:41 by jmiras-s          #+#    #+#             */
+/*   Updated: 2023/05/23 18:06:46 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-void    ft_putchar(char c, int i)
-{
-    while (i > 0)
-    {
-        write(1, &c, 1);
-        --i;
-    }
-}
 
-void	repeat(char *str)
+int main(int argc, char *argv[])
 {
-	while (*str != '\0')
-	{
-		if (*str >= 'a' && *str <= 'z')
-			ft_putchar(*str, *str + 1 - 'a');
-		else if (*str >= 'A' && *str <= 'Z')
-			ft_putchar(*str, *str + 1 - 'A');
-		else
-			write(1, str, 1);
-		str++;
-	}
-}
+	int	i = 0;
 
-int main(int argc, char **argv)
-{
 	if (argc == 2)
-		repeat(argv[1]);
-	
+	{
+		while (argv[1][i])
+			i += 1;
+		while (i)
+			write(1, &argv[1][--i], 1);
+	}
 	write(1, "\n", 1);
-    return (0);
+	return (0);
 }
