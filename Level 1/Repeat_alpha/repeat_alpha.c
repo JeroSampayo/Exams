@@ -6,12 +6,12 @@
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:00:24 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/05/23 16:59:08 by jmiras-s         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:02:42 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-void    ft_putchar_n(char c, int i)
+void    ft_putchar(char c, int i)
 {
     while (i > 0)
     {
