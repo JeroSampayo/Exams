@@ -21,7 +21,7 @@ unsigned char	swap_bits(unsigned char octet)
 	return (octet);
 }
 
-/* Alternative solution in fewer lines
+/* Alternative solution in one line.
  *{ 
  * return ((octet >> 4) | (octet << 4));
  *}
