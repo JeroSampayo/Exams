@@ -13,7 +13,7 @@
 int		max(int* tab, unsigned int len)
 {
 	unsigned int i  = 0;
-	unsigned int result;
+	int result;
 
 	result = tab[i];
 	while (i < len)
