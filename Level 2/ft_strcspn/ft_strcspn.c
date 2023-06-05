@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcspn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/05 11:31:23 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/06/05 11:35:39 by jmiras-s         ###   ########.fr       */
+/*   Created: 2023/06/05 11:39:46 by jmiras-s          #+#    #+#             */
+/*   Updated: 2023/06/05 11:45:51 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strcmp(char *s1, char *s2)
+size_t ft_strcspn(const char *s, const char *reject)
 {
 	int i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+	int j = 0;
+	
+	while(s[i] != '\0')
+	{
+		j = 0;
+		while (reject[j] != '\0')
+		{
+			if (s[i] == reject[j])
+				return(i)
+			j++;
+		}
 		i++;
-	return (s1[i] - s2[i]);
+	}
+	return (i);
 }
