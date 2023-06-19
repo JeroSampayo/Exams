@@ -6,7 +6,7 @@
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:35:19 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/06/03 14:22:32 by jmiras-s         ###   ########.fr       */
+/*   Updated: 2023/06/19 12:40:59 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -26,15 +26,10 @@ int main(int argc, char **argv)
 	if (argc == 3)
 	{
 		while (argv[2][i2])
-			if (argv[2][i2] == argv[1][i]) 
-			{
-				i2++;
+			if (argv[2][i2++] == argv[1][i]) 
 				i += 1;
-			}	
-		if(!argv[1][i])
+		if (!argv[1][i])
 			ft_putstr(argv[1]);
 	}
 	write(1, "\n", 1);
-	return(0);
 }
-
