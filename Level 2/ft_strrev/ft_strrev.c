@@ -25,5 +25,5 @@ char    *ft_strrev(char *str
     str[i] = str[len - 1 - i];
     str[len - 1 - i] = temp;
   }
-	return(str);
+return(str);
 }
