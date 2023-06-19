@@ -9,12 +9,11 @@
 /*   Updated: 2023/06/19 14:56:37 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 #include <stdio.h>
-
+#include <string.h>
 char    *ft_strpbrk(const char *s1, const char *s2)
 {
-	int i = 0;
+  int i = 0;
 
   if (!s1 || !s2)
       return(0);
