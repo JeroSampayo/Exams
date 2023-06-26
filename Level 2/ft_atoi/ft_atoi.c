@@ -10,21 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+int     ft_atoi(const char *str)
 {
-	int result = 0;
-	int sign = 1;
-
-	// Ignorar espacios en blanco y caracteres de control
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	// Manejar el signo negativo si existe
-	if (*str == '-')
-		sign = -1;
-	if (*str >= '0' && *str <= '9')
-	{
-		result = result * 10 + *str -'0';
-		str++;
-	}
-	return (sign * result);
+        int result = 0;
+        int flag = 1;
+        while (*str == 32 || (*str >= 9 && *str <= 13))
+                str++;
+        if (*str == '-')
+                flag = -1;
+        if (*str == '-' || *str == '+')
+                str++;
+        while (*str >= '0' && *str <= '9')
+        {
+                result = result * 10 + *str - '0';
+                str++;
+        }
+        return (flag * result);
 }
+/*
+int main()
+{
+        char *str = "246810";
+        int i;
+        i = ft_atoi(str);
+        printf("%i", i);
+}*/
