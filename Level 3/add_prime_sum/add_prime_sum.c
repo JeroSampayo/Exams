@@ -1,52 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   union.c                                            :+:      :+:    :+:   */
+/*   add_prime_sum.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/19 10:57:39 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/06/28 15:24:36 by jmiras-s         ###   ########.fr       */
+/*   Created: 2023/07/05 12:58:12 by jmiras-s          #+#    #+#             */
+/*   Updated: 2023/07/05 13:17:03 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
-int check(int c, char *str, int index)
+int	ft_atoi(char *s)
 {
-	int i = 0;
+	int	res = 0;
 
-	while(i < index)
-	{
-		if (str[i] == c)
-			return 0;
-		i++;
-	}
-	return  1;
+	while (*s)
+		res = res * 10 + *s++ - 48;
+	return (res);
 }
 
+int	is_prime(int num)
+{
+	int	i = 2;
+
+	if (num <= 1)
+		return (0);
+	while (i * i <= num)
+	{
+		if (num % i == 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+void	put_nbr(int n)
+{
+	if (n >= 10)
+		put_nbr(n / 10);
+	char digit = n % 10 + '0';
+	write(1, &digit, 1);
+}
 int main(int argc, char **argv)
 {
-	int i;
-	int i2;
-	int i3;
-
-	if (argc == 3)
+	if (argc == 2)
 	{
-		while (argv[1][i] != '\0')
-			i++;
-		while (argv[2][i2] != '\0')
+		int num = ft_atoi(argv[1]);
+		int sum = 0;
+
+		while (num > 0)
 		{
-			argv[1][i] = argv[2][i2];
-			i++;
-			i2++;
+			if (is_prime(num))
+				sum += num;
+			num--;
 		}
-		i--;
-		while (i3 <= i)
-		{
-			if (check(argv[1][i3], argv[1], i3) == 1)
-				write (1, &argv[1][i3], 1);
-			i3++;
-		}
+		put_nbr(sum);
 	}
 	write(1, "\n", 1);
+	return (0);
 }
