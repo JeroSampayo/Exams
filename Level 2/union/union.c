@@ -5,26 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-<<<<<<< HEAD
-/*   Created: 2023/06/19 10:57:39 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/06/28 15:24:36 by jmiras-s         ###   ########.fr       */
+/*   Created: 2023/07/18 17:39:10 by jmiras-s          #+#    #+#             */
+/*   Updated: 2023/07/18 17:57:23 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 int check(int c, char *str, int index)
-=======
-/*   Created: 2023/06/28 17:01:55 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/06/28 17:40:39 by jmiras-s         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include <unistd.h>
-int check(int c, char *str, int k)
->>>>>>> d1a64a8845a8b4533147261505ae7a32e5d389a6
 {
 	int i = 0;
-
-	while (i < k)
+	while (i < index)
 	{
 		if (str[i] == c)
 			return 0;
@@ -36,23 +24,22 @@ int check(int c, char *str, int k)
 int main(int argc, char **argv)
 {
 	int i = -1;
-	int j = -1;
+	int j = 0;
 	int k = 0;
 	if (argc == 3)
 	{
-		while (argv[1][++i])
-		while (argv[2][++j])
+		while (argv[1][++i] != '\0')
+		while (argv[2][j] != '\0')
 		{
-			if (argv[1][i] == argv[2][j])
-			{
-				argv[1][i] = argv[2][j];
-				i++;
-			}
+			argv[1][i] = argv[2][j];
+			j++;
+			i++;
 		}
-		while (k < i)
+		i--;
+		while (k <= i)
 		{
 			if (check(argv[1][k], argv[1], k) == 1)
-					write(1, &argv[1][k], 1);
+				write(1, &argv[1][k], 1);
 			k++;
 		}
 	}
