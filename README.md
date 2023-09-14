@@ -72,5 +72,4 @@ Any of the 10 Functions/Programs Below:
   - rostring
   - sort_int_tab
   - sort_list
-## Stats
 ### Total of 57 Functions/Programs.
